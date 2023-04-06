@@ -5,18 +5,18 @@
 int extraMemoryAllocated;
 
 
-void heapify(int arr[], int n, int i) {
-    int largest = i;  
-    int l = 2*i + 1;  
-    int r = 2*i + 2;  
+void heapify(int arr[], int n, int x) {
+    int largest = x;  
+    int l = 2*x + 1;  
+    int r = 2*x + 2;  
     if (l < n && arr[l] > arr[largest])
         largest = l;
     if (r < n && arr[r] > arr[largest])
         largest = r;
  
-    if (largest != i) {
-        int temp = arr[i];
-        arr[i] = arr[largest];
+    if (largest != x) {
+        int temp = arr[x];
+        arr[x] = arr[largest];
         arr[largest] = temp;
         heapify(arr, n, largest);
     }
